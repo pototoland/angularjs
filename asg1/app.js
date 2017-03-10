@@ -21,6 +21,8 @@ function LunchCheckController($scope){
   $scope.countItems = function(){
     $scope.arrayOfItems = $scope.items.split(',');
     for (var i = 0; i < $scope.arrayOfItems.length; i++){
+      //use regex to remove empty space
+      $scope.arrayOfItems[i] = $scope.arrayOfItems[i].replace(/\s+/g, '');
       if ($scope.arrayOfItems[i] == "") {
         $scope.arrayOfItems.splice(i, 1);
         i--;
